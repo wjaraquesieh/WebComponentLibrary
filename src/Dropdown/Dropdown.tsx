@@ -1,29 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import { DropdownProps } from './Dropdown.types';
 
-type DropdownProps = {
-  disabled?: boolean;
-  onClick?: () => void;
-  children: React.ReactNode;
-};
-
-const StyledDropdown = styled.div<{ disabled?: boolean }>`
-  padding: 10px 20px;
-  background-color: ${(props) => (props.disabled ? 'grey' : 'blue')};
-  color: white;
-  border: none;
+const StyledSelect = styled.select<{ disabled?: boolean }>`
+  padding: 8px;
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
-
-  &:hover {
-    background-color: ${(props) => !props.disabled && 'darkblue'};
-  }
+  background-color: ${(props) => (props.disabled ? 'grey' : 'white')};
 `;
 
-const Dropdown: React.FC<DropdownProps> = ({ disabled, onClick, children }) => {
+const Dropdown: React.FC<DropdownProps> = ({ disabled, options, onChange }) => {
   return (
-    <StyledDropdown disabled={disabled} onClick={onClick}>
-      {children}
-    </StyledDropdown>
+    <StyledSelect disabled={disabled} onChange={onChange}>
+      {options.map((option, index) => (
+        <option key={index} value={option.value} disabled={option.disabled}>
+          {option.label}
+        </option>
+      ))}
+    </StyledSelect>
   );
 };
 

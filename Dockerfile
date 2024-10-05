@@ -2,7 +2,7 @@
 FROM node:latest
 
 # Set the working directory inside the container
-WORKDIR /jara_wadia_site
+WORKDIR /jara_wadia_ui_garden
 
 # Cache and Install dependencies
 COPY package.json ./

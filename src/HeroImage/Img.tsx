@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type ButtonProps = {
+type ImgProps = {
   disabled?: boolean;
   onClick?: () => void;
   children: React.ReactNode;
 };
 
-const StyledButton = styled.button<{ disabled?: boolean }>`
+const StyledImg = styled.div<{ disabled?: boolean }>`
   padding: 10px 20px;
   background-color: ${(props) => (props.disabled ? 'grey' : 'blue')};
   color: white;
@@ -17,19 +17,14 @@ const StyledButton = styled.button<{ disabled?: boolean }>`
   &:hover {
     background-color: ${(props) => !props.disabled && 'darkblue'};
   }
-
-  @media (max-width: 600px) {
-    padding: 5px 10px;
-    font-size: 12px;
-  }
 `;
 
-const Button: React.FC<ButtonProps> = ({ disabled, onClick, children }) => {
+const Img: React.FC<ImgProps> = ({ disabled, onClick, children }) => {
   return (
-    <StyledButton disabled={disabled} onClick={onClick}>
+    <StyledImg disabled={disabled} onClick={onClick}>
       {children}
-    </StyledButton>
+    </StyledImg>
   );
 };
 
-export default Button;
+export default Img;

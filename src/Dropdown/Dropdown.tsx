@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type ButtonProps = {
+type DropdownProps = {
   disabled?: boolean;
   onClick?: () => void;
   children: React.ReactNode;
 };
 
-const StyledButton = styled.button<{ disabled?: boolean }>`
+const StyledDropdown = styled.div<{ disabled?: boolean }>`
   padding: 10px 20px;
   background-color: ${(props) => (props.disabled ? 'grey' : 'blue')};
   color: white;
@@ -17,19 +17,14 @@ const StyledButton = styled.button<{ disabled?: boolean }>`
   &:hover {
     background-color: ${(props) => !props.disabled && 'darkblue'};
   }
-
-  @media (max-width: 600px) {
-    padding: 5px 10px;
-    font-size: 12px;
-  }
 `;
 
-const Button: React.FC<ButtonProps> = ({ disabled, onClick, children }) => {
+const Dropdown: React.FC<DropdownProps> = ({ disabled, onClick, children }) => {
   return (
-    <StyledButton disabled={disabled} onClick={onClick}>
+    <StyledDropdown disabled={disabled} onClick={onClick}>
       {children}
-    </StyledButton>
+    </StyledDropdown>
   );
 };
 
-export default Button;
+export default Dropdown;

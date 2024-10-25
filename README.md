@@ -1,6 +1,6 @@
-# Coding Assignment 12 - Wadia Jara Q.
+# Coding Assignment 13 - Wadia Jara Q.
 GitHub repository
-## https://github.com/wjaraquesieh/WebComponentLibrary
+## https://github.com/wjaraquesieh/UIComponentLibrary
 
 ## Before Running code; Install on windows the following
 1. Node.js
@@ -20,17 +20,17 @@ git --version
 yarn install
 
 ### Step 2: Build the Docker Image
-docker build -t jara_wadia_coding_assignment12 .
+docker build -t jara_wadia_coding_assignment13 .
 
 ### Step 3: Run the Docker Container
-docker run -d -p 8083:8083 --name jara_wadia_coding_assignment12 jara_wadia_coding_assignment12
+docker run -d -p 8018:8018 --name jara_wadia_coding_assignment13 jara_wadia_coding_assignment13
 
 ### Step 4: Access the Application
-The application is running on [http://localhost:8083](http://localhost:8083)
+The application is running on [http://localhost:8018](http://localhost:8018)
 
 ### Step 5: Start the Docker Container
-docker start jara_wadia_coding_assignment12
+docker start jara_wadia_coding_assignment13
 
 ## Stopping and Removing the Docker Container
-docker stop jara_wadia_coding_assignment12
-docker rm jara_wadia_coding_assignment12
+docker stop jara_wadia_coding_assignment13
+docker rm jara_wadia_coding_assignment13
